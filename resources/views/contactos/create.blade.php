@@ -1,4 +1,4 @@
-<!-- @extends('layout.plantilla')
+@extends('layout.plantilla')
 @section('contenido')
     <form action="{{ route('contactos.store')}}" method="POST">
         @csrf 
@@ -24,4 +24,4 @@
             <input type="submit" value="Enviar" class="btn btn-success">
         </div>
 </form>    
-@endsection -->
+@endsection

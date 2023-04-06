@@ -1,4 +1,4 @@
-<!--@extends('layout.plantilla')
+@extends('layout.plantilla')
 @section('contenido')
     <h1>Contacto</h1>
     <hr>
@@ -40,4 +40,4 @@
                     @endforeach
             </tbody>
         </table> 
-@endsection-->
+@endsection
