@@ -1,11 +1,11 @@
-@extends('layout.plantilla')
+<!--@extends('layout.plantilla')
 @section('contenido')
     <h1>Contacto</h1>
     <hr>
     <div>
         <a href="{{route('contactos.create') }}" class="btn btn-primary">Contactar</a>
     </div>
-        <!-- <table class="table">
+         <table class="table">
             <thead>
                 <td>ID</td>
                 <td>NOMBRE</td>
@@ -39,5 +39,5 @@
                     </tr>
                     @endforeach
             </tbody>
-        </table> -->
-@endsection
+        </table> 
+@endsection-->
