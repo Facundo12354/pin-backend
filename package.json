@@ -1,9 +1,10 @@
 {
     "private": true,
     "scripts": {
-        "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
-        "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
-        "dev": "npm run development",
+        "dev":"SET NODE_OPTIONS=--openssl-legacy-provider && nuxt",
+        "build":"SET NODE_OPTIONS=--openssl-legacy-provider && nuxt build",
+        "start":"SET NODE_OPTIONS=--openssl-legacy-provider && nuxt start",
+        "generate":"SET NODE_OPTIONS=--openssl-legacy-provider && nuxt generate",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
