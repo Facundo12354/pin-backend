@@ -16,8 +16,7 @@ class CreateContactosTable extends Migration
         Schema::create('contactos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('correo',100)->change();
-            //$table->string('correo', 100);
+            $table->string('correo')->change();
             $table->string('telefono');
             $table->string('mensaje');
             $table->timestamps();
@@ -32,5 +31,7 @@ class CreateContactosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('contactos');
+         
+       
     }
 }
