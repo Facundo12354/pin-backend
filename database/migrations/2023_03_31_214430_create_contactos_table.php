@@ -14,9 +14,9 @@ class CreateContactosTable extends Migration
     public function up()
     {
         Schema::create('contactos', function (Blueprint $table) {
-            //$table->id();
+            $table->id();
             $table->string('nombre');
-            $table->text('correo');
+            $table->text('correo',100)->change();
             //$table->string('correo', 100);
             $table->string('telefono');
             $table->string('mensaje');
