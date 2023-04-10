@@ -25,11 +25,11 @@ class ContactoController extends Controller
     public function store(Request $request)
     {
         
-        #$contacto = new Contacto();
-        #$contacto->nombre = $request->nombre;
-        #$contacto->correo = $request->correo;
-        #$contacto->telefono = $request->telefono;
-        #$contacto->mensaje = $request->mensaje;
+        $contacto = new Contacto();
+        $contacto->nombre = $request->nombre;
+        $contacto->correo = $request->correo;
+        $contacto->telefono = $request->telefono;
+        $contacto->mensaje = $request->mensaje;
         
         $contacto = Contacto::create($request->all());
         $contacto->save();
@@ -60,4 +60,19 @@ class ContactoController extends Controller
     {
         //
     }
+    // public function getContacto(){
+    //     return response()->json(Contacto::all(), 200);
+
+    // }
+    
+    // public function getContactoid($id){
+    //     $contacto = Contacto::find($id);
+    //     if(is_null($contacto)){
+    //         return response()->json(["message"=>"Registro no encontrado"],404);
+
+    //     }
+    //     return response()->json($contacto,200);
+
+    // }
+    
 }
