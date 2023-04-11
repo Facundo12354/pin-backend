@@ -22,7 +22,7 @@ class CreateContactosTable extends Migration
             $table->timestamps();
         });
     }
-
+   
     /**
      * Reverse the migrations.
      *

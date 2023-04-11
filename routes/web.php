@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\EnviarMail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    Mail::to('brisa1@gmail.com')
+    ->cc('facundo9831@gmail.com')
+    ->bcc('jeff@amazon.com')
+    ->send(new EnviarMail());
     return view('welcome');
  });
 Route::resource('contactos','App\Http\Controllers\ContactoController')->names('contactos');

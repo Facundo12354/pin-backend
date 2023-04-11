@@ -24,7 +24,19 @@ class ContactoController extends Controller
    
     public function store(Request $request)
     {
-        
+    //     $request->validate([
+    //         'legajo'=>'required|alpha_dash|size:6'
+    //     ]);
+    //     $contacto_id = Contacto::where('legajo',$request['legajo'])->first()->id;
+    //     $contacto = Contacto::create([
+    //         'nombre'=>now(),'contacto_id'=>$contacto_id,
+    // ]);
+    // $data=Contacto::with('contacto')->where('id',$contacto->id)->get();
+    
+    // return response()->json([
+    //     'mensaje'=>'Se agrego correctamente el mensaje',
+    //     'data'=>$data;
+    // ]);
         $contacto = new Contacto();
         $contacto->nombre = $request->nombre;
         $contacto->correo = $request->correo;
@@ -32,8 +44,9 @@ class ContactoController extends Controller
         $contacto->mensaje = $request->mensaje;
         
         $contacto = Contacto::create($request->all());
-        $contacto->save();
-        return redirect()->route('contactos.index');
+         $contacto->save();
+         Mail::to('facuruiz11@hotmail.com')->send(new EnviarMail($contacto));
+         return redirect()->route('contactos.index');
 
     }
 
