@@ -14,11 +14,15 @@ use App\Mail\EnviarMail;
 */
 
 Route::get('/', function () {
-    Mail::to('brisa1@gmail.com')
-    ->cc('facundo9831@gmail.com')
-    ->bcc('jeff@amazon.com')
-    ->send(new EnviarMail());
-    return view('welcome');
+    // Mail::send('facuruiz11@hotmail.com')
+    // ->cc('facundo9831@gmail.com')
+    // ->send(new EnviarMail());
+    // return view('welcome');
+    \Mail::send('email.template', $data, function($message) {
+        $message->to('facuruiz11@hotmail.com')
+                ->subject('Subject of email')
+                ->from('ahmygoddess@outlook.es', 'Brisa Soledad');
+    });
  });
 Route::resource('contactos','App\Http\Controllers\ContactoController')->names('contactos');
 
