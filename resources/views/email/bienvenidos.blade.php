@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Bievenido</h1>
-    <p>A la comunidad de programadores</p>
+    <p>{{$details['nombre']}}</p>
+    <p>{{$details['correo']}}</p>
 </body>
 </html>

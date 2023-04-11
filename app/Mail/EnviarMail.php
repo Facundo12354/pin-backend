@@ -10,15 +10,15 @@ use Illuminate\Queue\SerializesModels;
 class EnviarMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $details;
     /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    * Create a new message instance.
+    *
+    * @return void
+    */
+    public function __construct($details)
     {
-        //
+        $this->details = $details;
     }
 
     /**
@@ -28,8 +28,6 @@ class EnviarMail extends Mailable
      */
     public function build()
     {
-        return $this ->subject('bienvenidos a la comunidad')
-        ->text('email.bienvenido_txt')
-        ->view('email.bienvenidos');
+        return $this->subject('bienvenidos a la comunidad')->view('email.bienvenidos');
     }
 }

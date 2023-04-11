@@ -34,7 +34,12 @@ class ContactoController extends Controller
         
         $contacto = Contacto::create($request->all());
         $contacto->save();
-        Mail::to('facuruiz11@hotmail.com')->send(new EnviarMail($contacto));
+        $details = [
+            'nombre' => 'Post nombre: ' . $request->nombre,
+            'correo' => $request->correo,
+            ];
+            
+        Mail::to('facuruiz11@hotmail.com')->send(new EnviarMail($details));
          
         return response()->json([
             'mensaje'=>'Se agrego correctamente el mensaje',
