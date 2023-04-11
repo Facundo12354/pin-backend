@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Contacto;
 use Illuminate\Http\Request;
-use Mail; 
+//use Mail; 
 use App\Mail\EnviarMail;
-
+use Illuminate\Support\Facades\Mail;
 class ContactoController extends Controller
 {
     
