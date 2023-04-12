@@ -14,17 +14,17 @@ use App\Mail\EnviarMail;
 */
 
 Route::get('/', function () {
-     Mail::to('facuruiz11@hotmail.com')
-     ->cc('facundo9831@gmail.com')
-    ->send(new EnviarMail())
-    ->from('ahmygoddess@outlook.es','Brisa Soledad');
-     return view('welcome');
-    // \Mail::send('email.template', $data, function($message) {
-    //     $message->to('facuruiz11@hotmail.com')
-    //             ->subject('Subject of email')
-    //             ->from('ahmygoddess@outlook.es', 'Brisa Soledad');
-    //});
- });
+//     Mail::to('facuruiz11@hotmail.com')
+//     ->cc('facundo9831@gmail.com')
+//    ->send(new EnviarMail())
+//    ->from('ahmygoddess@outlook.es','Brisa Soledad');
+//     return view('welcome');
+    Mail::send('email.template', $data, function($message) {
+         $message->to('facuruiz11@hotmail.com')
+                 ->subject('welcome')
+                ->from('ahmygoddess@outlook.es', 'Brisa Soledad');
+   });
+});
 Route::resource('contactos','App\Http\Controllers\ContactoController')->names('contactos');
 
 // Route::post('guardar',[ContactoController::class,'guardar']);
