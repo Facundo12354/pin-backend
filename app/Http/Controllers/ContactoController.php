@@ -44,7 +44,8 @@ class ContactoController extends Controller
         // Mail::to('destinatario@example.com')->send(new MiCorreo($datos))->from('tucorreo@gmail.com', 'Nombre del remitente');
         return response()->json([
             'mensaje'=>'Se agrego correctamente el mensaje',
-            'data'=>$data,
+            $data = $_POST['data']
+            // 'data'=>$data,
             
         ]);
 
