@@ -42,9 +42,9 @@ class ContactoController extends Controller
         Mail::to('facuruiz11@hotmail.com')->send(new EnviarMail($details));
         // ->from('facundo9831@gmail.com', 'Facundo');
         // Mail::to('destinatario@example.com')->send(new MiCorreo($datos))->from('tucorreo@gmail.com', 'Nombre del remitente');
+        $data = obtener_datos();
         return response()->json([
             'mensaje'=>'Se agrego correctamente el mensaje',
-            $data = $_POST['data'],
             'data'=>$data,
             
         ]);
