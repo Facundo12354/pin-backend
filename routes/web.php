@@ -18,6 +18,11 @@ Route::get('/', function () {
     ->cc('facundo9831@gmail.com')
     ->bcc('jeff@amazon.com')
     ->send(new EnviarMail());
+    $message = Swift_Message::newInstance()
+    ->setSubject('Prueba')
+    ->setFrom('facuruiz11@hotmail.com', 'Facundo')
+    ->setTo('ahmygoddess@outlook.es')
+    ->setBody('hola esto es una prueba');
     return view('welcome');
  });
 Route::resource('contactos','App\Http\Controllers\ContactoController')->names('contactos');
