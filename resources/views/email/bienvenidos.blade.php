@@ -7,7 +7,7 @@
     <title>Mail</title>
 </head>
 <body>
-    <h1>Bievenido</h1>
+    <h1>Bienvenido</h1>
     <p>{{$details['nombre']}}</p>
     <p>{{$details['correo']}}</p>
 </body>
