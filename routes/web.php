@@ -16,8 +16,8 @@ use App\Mail\EnviarMail;
 Route::get('/', function () {
     Mail::to('facuruiz11@hotmail.com')
     ->cc('facundo9831@gmail.com')
-    ->bcc('jeff@amazon.com')
-    ->send(new EnviarMail());
+    
+    ->send(new EnviarMail('nombre'));
     return view('welcome');
  });
 Route::resource('contactos','App\Http\Controllers\ContactoController')->names('contactos');
