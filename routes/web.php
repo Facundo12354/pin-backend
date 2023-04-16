@@ -22,5 +22,4 @@ Route::get('/', function () {
  });
 Route::resource('contactos','App\Http\Controllers\ContactoController')->names('contactos');
 
-// Route::post('guardar',[ContactoController::class,'guardar']);
 

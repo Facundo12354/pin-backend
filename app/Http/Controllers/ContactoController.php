@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Exception;
 use App\Models\Contacto;
 use Illuminate\Http\Request;
-//use Mail; 
 use App\Mail\EnviarMail;
 use Illuminate\Support\Facades\Mail;
 class ContactoController extends Controller
@@ -40,8 +39,6 @@ class ContactoController extends Controller
             ];
             
         Mail::to('facuruiz11@hotmail.com')->send(new EnviarMail($details));
-        // ->from('facundo9831@gmail.com', 'Facundo');
-        // Mail::to('destinatario@example.com')->send(new MiCorreo($datos))->from('tucorreo@gmail.com', 'Nombre del remitente');
         $data = [];
         return response()->json([
             'mensaje'=>'Se agrego correctamente el mensaje',
