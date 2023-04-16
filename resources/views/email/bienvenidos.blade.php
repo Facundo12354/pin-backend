@@ -10,5 +10,7 @@
     <h1>Bienvenido</h1>
     <p>{{$details['nombre']}}</p>
     <p>{{$details['correo']}}</p>
+    <p>{{$details['telefono']}}</p>
+    <p>{{$details['mensaje']}}</p>
 </body>
 </html>
